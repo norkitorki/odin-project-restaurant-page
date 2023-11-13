@@ -47,3 +47,119 @@ table {
 	border-spacing: 0;
 }
 
+/* Custom CSS */
+
+@font-face {
+  font-family: Friendlist;
+  src: url('./Friendlist_Demo.otf');
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: sans-serif, 'Segoe UI', Tahoma, Geneva, Verdana;
+  background-color: #a75823;
+  color: #ffffff;
+}
+
+.main-heading {
+  font-family: Friendlist;
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+#content { display: flex; }
+
+.main-wrapper { width: 100%; }
+
+nav {
+  margin: 1rem 0 0 1rem;
+  display: flex;
+  gap: .6rem;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+nav a { border-radius: .5rem .5rem 0 0; }
+
+nav a:hover,
+nav a:focus { color:#a75823; }
+
+main {
+  line-height: 1.5;
+  padding: 1.5rem;
+  background-color: #441b1b;
+  text-align: center;
+  gap: 1.5rem;
+}
+
+.main-navigation > a {
+  color: black;
+  text-decoration: none;
+  background-color: #ffffff;
+  padding: .5rem;
+}
+
+.main-image {
+  width: 600px;
+  height: 100%;
+}
+
+form { text-align: center; }
+
+label {
+  display: flex;
+  flex-direction: column;
+  margin: .8rem auto;
+  font-family: FriendList;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+input {
+  margin: .8rem auto;
+  padding: .6rem .4rem;
+}
+
+input[type="submit"] {
+  font-weight: bold;
+  padding: .4rem .6rem;
+}
+
+footer {
+  border-top: 3px solid #ffffff;
+  flex-grow: 1;
+  padding: 2rem 1rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+  background-color: #441b1b;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.socials {
+  display: flex;
+  gap: .8rem;
+}
+
+.socials img {
+  width: 30px;
+  height: 30px;
+}
+
+.socials img:hover, .socials img:focus {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+@media (max-width: 1050px) {
+  #content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav { justify-content: center; }
+}
