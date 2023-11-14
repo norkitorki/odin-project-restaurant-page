@@ -102,11 +102,6 @@ main {
   padding: .5rem;
 }
 
-.main-image {
-  width: 600px;
-  height: 100%;
-}
-
 .image-credit {
   font-size: .8rem;
   font-weight: bold;
