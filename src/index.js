@@ -1,4 +1,10 @@
 import css from './style.css';
+import mainImageImport from './images/main-image.jpg';
+import menuImageImport from './images/menu.jpg';
+import facebookLogoImport from './images/facebook.png';
+import xLogoImport from './images/x.png';
+import linkedinLogoImport from './images/linkedin.png';
+
 import { buildGallery, initGallery } from './gallery.js';
 
 const content = document.getElementById('content'),
@@ -23,7 +29,7 @@ const pullTemplateContent = (e) => {
 // Main image
 const mainImage = document.createElement('img');
 mainImage.classList.add('main-image');
-mainImage.src = '../src/images/juli-kosolapova-q_jKuy-cURg-unsplash.jpg';
+mainImage.src = mainImageImport;
 
 // Content wrapper
 const wrapper = document.createElement('div');
@@ -47,7 +53,7 @@ appendElements.call(document.getElementById('gallery').content, gallery);
 // Menu page
 const menuImage = document.createElement('img'), menuGallery = document.createElement('div');
 menuImage.classList.add('menu-image');
-menuImage.src = '../src/images/menu.jpg';
+menuImage.src = menuImageImport;
 appendElements.call(document.getElementById('menu').content, menuImage);
 
 // Book page
@@ -93,9 +99,9 @@ const footer  = document.createElement('footer'),
       liLogo  = document.createElement('img');
 
 socials.classList.add('socials');
-fbLogo.src = '../src/images/facebook.png';
-xLogo.src  = '../src/images/logo.svg';
-liLogo.src = '../src/images/linkedin.png';
+fbLogo.src = facebookLogoImport;
+xLogo.src  = xLogoImport;
+liLogo.src = linkedinLogoImport;
 appendElements.apply(socials, [fbLogo, xLogo, liLogo]);
 
 address.textContent = 'Lorem Ipsum street Amsterdam, 00001'
