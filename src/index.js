@@ -7,8 +7,9 @@ import linkedinLogoImport from './images/linkedin.png';
 
 import { buildGallery, initGallery } from './gallery.js';
 
-const content = document.getElementById('content'),
-         main = document.createElement('main');
+const content    = document.getElementById('content'),
+         main    = document.createElement('main'),
+         gallery = buildGallery(8, 'image-gallery');
 
 function appendElements(...elements) {
   elements.forEach(el => this.appendChild(el));
@@ -26,13 +27,26 @@ const pullTemplateContent = (e) => {
   }
 };
 
+const imageCredit = (author, url) => {
+  const div = document.createElement('div'),
+          a = document.createElement('a');
+
+  [a.textContent, a.href, a.target] = [author, url, '_blank'];
+  div.textContent = 'Image by ';
+  div.classList.add('image-credit');
+  div.appendChild(a);
+  return div;
+};
+
 // Main image
 const mainImage = document.createElement('img');
 mainImage.classList.add('main-image');
 mainImage.src = mainImageImport;
 
 // Content wrapper
-const wrapper = document.createElement('div');
+const wrapper         = document.createElement('div'),
+      mainImageCredit = imageCredit('Juli Kosolapova', 'https://unsplash.com/@yuli_superson');
+wrapper.appendChild(mainImageCredit)
 wrapper.classList.add('main-wrapper');
 
 // Navigation
@@ -47,14 +61,14 @@ navigation.addEventListener('click', pullTemplateContent);
 });
 
 // Gallery page
-const gallery = buildGallery(8, 'image-gallery');
 appendElements.call(document.getElementById('gallery').content, gallery);
 
 // Menu page
-const menuImage = document.createElement('img'), menuGallery = document.createElement('div');
+const menuImage = document.createElement('img'), 
+      menuImageCredit = imageCredit('freepik', 'https://www.freepik.com/author/freepik');
 menuImage.classList.add('menu-image');
 menuImage.src = menuImageImport;
-appendElements.call(document.getElementById('menu').content, menuImage);
+appendElements.apply(document.getElementById('menu').content, [menuImage, menuImageCredit]);
 
 // Book page
 const createLabel = (text, input = nil) => {

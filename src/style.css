@@ -107,6 +107,13 @@ main {
   height: 100%;
 }
 
+.image-credit {
+  font-size: .8rem;
+  font-weight: bold;
+}
+
+.image-credit > a { color: #ffffff; }
+
 form { text-align: center; }
 
 label {
