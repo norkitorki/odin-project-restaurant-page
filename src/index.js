@@ -46,7 +46,7 @@ mainImage.src = mainImageImport;
 // Content wrapper
 const wrapper         = document.createElement('div'),
       mainImageCredit = imageCredit('Juli Kosolapova', 'https://unsplash.com/@yuli_superson');
-wrapper.appendChild(mainImageCredit)
+wrapper.appendChild(mainImageCredit);
 wrapper.classList.add('main-wrapper');
 
 // Navigation
