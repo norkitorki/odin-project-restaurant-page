@@ -71,7 +71,7 @@ menuImage.src = menuImageImport;
 appendElements.apply(document.getElementById('menu').content, [menuImage, menuImageCredit]);
 
 // Book page
-const createLabel = (text, input = nil) => {
+const createLabel = (text, input = null) => {
   const label = document.createElement('label');
   label.textContent = text;
   if (input) label.appendChild(input);
