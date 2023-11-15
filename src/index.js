@@ -58,7 +58,7 @@ wrapper.classList.add('main-wrapper');
 const navigation = document.createElement('nav');
 navigation.classList.add('main-navigation');
 navigation.addEventListener('click', pullTemplateContent);
-['Home', 'Gallery', 'Menu', 'Book'].forEach(str => {
+['Home', 'Gallery', 'Menu', 'Reservation'].forEach(str => {
   let anchor = document.createElement('a');
   anchor.textContent = str;
   anchor.href = '#';
@@ -75,7 +75,7 @@ menuImage.classList.add('menu-image');
 menuImage.src = menuImageImport;
 appendElements.apply(document.getElementById('menu').content, [menuImage, menuImageCredit]);
 
-// Book page
+// Reservation page
 const createLabel = (text, input = null) => {
   const label = document.createElement('label');
   label.textContent = text;
@@ -89,24 +89,24 @@ const createInput = (attr = {}) => {
   return input;
 }
 
-const bookP       = document.createElement('p'),
-      bookForm    = document.createElement('form'),
-      nameInput   = createInput({ type: 'text', required: true }),
-      nameLabel   = createLabel('Name', nameInput),
-      telInput    = createInput({ type: 'tel', required: true }),
-      telLabel    = createLabel('Phone Number', telInput),
-      emailInput  = createInput({type: 'email', required: true }),
-      emailLabel  = createLabel('Email', emailInput),
-      dateInput   = createInput({ type: 'date', required: true }),
-      dateLabel   = createLabel('Date', dateInput),
-      personInput = createInput({ type: 'number', value: 1, min: 0, max: 8, required: true }),
-      personLabel = createLabel('Number of Persons', personInput),
-      submitBtn   = createInput({type: 'submit', value: 'Send Request' });
+const reservationP    = document.createElement('p'),
+      reservationForm = document.createElement('form'),
+      nameInput       = createInput({ type: 'text', required: true }),
+      nameLabel       = createLabel('Name', nameInput),
+      telInput        = createInput({ type: 'tel', required: true }),
+      telLabel        = createLabel('Phone Number', telInput),
+      emailInput      = createInput({type: 'email', required: true }),
+      emailLabel      = createLabel('Email', emailInput),
+      dateInput       = createInput({ type: 'date', required: true }),
+      dateLabel       = createLabel('Date', dateInput),
+      personInput     = createInput({ type: 'number', value: 1, min: 0, max: 8, required: true }),
+      personLabel     = createLabel('Number of Persons', personInput),
+      submitBtn       = createInput({type: 'submit', value: 'Send Request' });
 
-bookP.textContent = 'We would love to have you dine with us. Request a table today!';
+reservationP.textContent = 'We would love to have you dine with us. Reserve a table today!';
 
-appendElements.apply(bookForm, [nameLabel, telLabel, emailLabel, dateLabel, personLabel, submitBtn]);
-appendElements.apply(document.getElementById('book').content, [bookP, bookForm]);
+appendElements.apply(reservationForm, [nameLabel, telLabel, emailLabel, dateLabel, personLabel, submitBtn]);
+appendElements.apply(document.getElementById('reservation').content, [reservationP, reservationForm]);
 
 // Footer
 const footer  = document.createElement('footer'),
