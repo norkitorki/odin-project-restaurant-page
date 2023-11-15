@@ -1,5 +1,6 @@
 import css from './style.css';
 import mainImageImport from './images/main-image.jpg';
+import mainImageSmall from './images/main-image-small.jpg';
 import menuImageImport from './images/menu.jpg';
 import facebookLogoImport from './images/facebook.png';
 import xLogoImport from './images/x.png';
@@ -39,9 +40,13 @@ const imageCredit = (author, url) => {
 };
 
 // Main image
-const mainImage = document.createElement('img');
-mainImage.classList.add('main-image');
-mainImage.src = mainImageImport;
+const picture    = document.createElement('picture'),
+      pictureSrc = document.createElement('source'),
+      mainImage  = document.createElement('img');
+
+[pictureSrc.srcset, pictureSrc.media] = [mainImageSmall, '(max-width: 1050px)'];
+[mainImage.src, mainImage.alt] = [mainImageImport, 'a narrow alleyway with tables and chairs'];
+appendElements.apply(picture, [pictureSrc, mainImage]);
 
 // Content wrapper
 const wrapper         = document.createElement('div'),
@@ -124,7 +129,7 @@ appendElements.apply(footer, [address, credit, socials]);
 
 // Add elements to DOM
 appendElements.apply(wrapper, [navigation, main]);
-appendElements.apply(content, [mainImage, wrapper]);
+appendElements.apply(content, [picture, wrapper]);
 appendElements.call(document.body, footer);
 
 const homeTemplate = document.getElementById('home').content.cloneNode(true);
