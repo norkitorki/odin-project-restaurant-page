@@ -1,4 +1,4 @@
-function homeTemplate() {
+export function homeTemplate() {
   const heading     = document.createElement('h1'),
         description = document.createElement('p');
 
@@ -14,5 +14,3 @@ function homeTemplate() {
   this.appendChild(heading);
   this.appendChild(description);
 };
-
-export { homeTemplate };
