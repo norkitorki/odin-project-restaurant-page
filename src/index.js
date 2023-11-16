@@ -8,9 +8,9 @@ import linkedinLogoImport from './images/linkedin.png';
 
 import { buildGallery, initGallery } from './gallery.js';
 
-const content    = document.getElementById('content'),
-      main       = document.createElement('main'),
-      gallery    = buildGallery(8, 'image-gallery');
+const content = document.getElementById('content'),
+      main    = document.createElement('main'),
+      gallery = buildGallery(8, 'image-gallery');
 
 function appendElements(...elements) {
   elements.forEach(el => this.appendChild(el));
