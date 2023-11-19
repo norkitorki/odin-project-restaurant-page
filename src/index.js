@@ -1,4 +1,4 @@
-import css from './style.css';
+import css from './stylesheets/style.css';
 import { createMainImage } from './components/main-image';
 import { createNav, createNavItem } from './components/nav';
 import { createFooter } from './components/footer';

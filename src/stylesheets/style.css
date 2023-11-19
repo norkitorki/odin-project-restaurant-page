@@ -46,7 +46,7 @@ table {
 
 @font-face {
   font-family: Friendlist;
-  src: url('./fonts/Friendlist_Demo.otf');
+  src: url('../fonts/Friendlist_Demo.otf');
 }
 
 body {
