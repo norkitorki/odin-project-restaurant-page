@@ -2,9 +2,10 @@ import PhotoSwipeLightbox from 'photoswipe/lightbox';
 import 'photoswipe/style.css';
 
 const buildGallery = (imageCount, elementId) => {
-  const container = document.createElement('div');
-  container.id = elementId;
-  const baseUrl = 'https://source.unsplash.com/random/1280x720/?restaurant/?sig=';
+  const gallery   = document.createElement('div'),
+        baseUrl   = 'https://source.unsplash.com/random/1280x720/?restaurant/?sig=';
+
+  gallery.id = elementId;
   let anchor, previewImage;
 
   for(let i = 1; i <= imageCount; i++) {
@@ -19,10 +20,10 @@ const buildGallery = (imageCount, elementId) => {
     previewImage.width = '320';
     
     anchor.appendChild(previewImage);
-    container.appendChild(anchor);
+    gallery.appendChild(anchor);
   }
 
-  return container;
+  return gallery;
 };
 
 const initGallery = (gallery) => {
@@ -33,4 +34,13 @@ const initGallery = (gallery) => {
   }).init();
 };
 
-export { buildGallery, initGallery };
+export function galleryTemplate() {
+  const heading = document.createElement('h1'),
+        gallery = buildGallery(8, 'main-gallery');
+
+  heading.classList.add('heading');
+  heading.textContent = 'Gallery';
+
+  [heading, gallery].forEach(el => this.appendChild(el));
+  initGallery(gallery);
+};
