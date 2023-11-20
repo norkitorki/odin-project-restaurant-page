@@ -14,6 +14,7 @@ module.exports = {
     title: 'Odin-Project: Restaurant Page',
     template: './src/home.html',
     inject: 'head',
+    filename: path.resolve(__dirname, 'index.html'),
   })],
   module: {
     rules: [
